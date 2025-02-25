@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from items.models import Item
 
 
@@ -9,4 +10,7 @@ class ItemAdmin(admin.ModelAdmin):
     list_display_links = "id", "name"
     ordering = "-id", "-name"
     list_per_page = 50
-    search_fields = "id", "name",
+    search_fields = (
+        "id",
+        "name",
+    )
