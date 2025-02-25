@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 SECRET_KEY = env("SECRET_KEY")
-DEBUG = env("DEBUG")
+DEBUG = bool(int(env("DEBUG")))
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 STRIPE_PUBLIC_KEY = env("STRIPE_PUBLIC_KEY")
@@ -92,5 +92,6 @@ USE_L10N = False
 USE_TZ = False
 
 STATIC_URL = "/static/"
+STATIC_ROOT = "static"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
