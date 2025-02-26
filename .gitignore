@@ -9,6 +9,7 @@ wheels/
 # Virtual environments
 .venv
 .env
+.env.docker
 uv.lock
 .idea/
 **/__pycache__/
